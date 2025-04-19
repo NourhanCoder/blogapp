@@ -46,7 +46,8 @@ if (checkRequestMethod("POST") && checkPostInput('username')){
 
         if($res){
             $_SESSION['username'] = $username;
-            $_SESSION['user_id'] = mysqli_insert_id($conn); // ✅ تخزين user_id في الجلسة
+            $_SESSION['user_id'] = mysqli_insert_id($conn); // للحصول على رقم المعرف (ID) للمستخدم الذي تم إدخاله حديثًا في قاعدة البيانات
+
             header("location: ./index.php");
             exit;
         }else{

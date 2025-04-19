@@ -19,6 +19,7 @@ if (!isset($_SESSION['user_id'])) {
 
 
 $user_id = $_SESSION['user_id']; // ✅ جلب user_id للمستخدم الحالي
+//التأكد من أن المستخدم يملك المنشور عند التعديل
 if (isset($_GET['id']) && !empty($_GET['id'])) { 
     $id = $_GET['id'];
 
@@ -29,7 +30,7 @@ if (isset($_GET['id']) && !empty($_GET['id'])) {
     // ❌ إذا لم يتم العثور على البوست أو لا ينتمي للمستخدم، نمنعه
     if (!$blogUpdate) {
         $_SESSION['errors'] = "You are not allowed to edit this post";
-        header("location: ./index.php?page=add-blog"); // توجيه إلى الصفحة الرئيسية
+        header("location: ./index.php?page=add-blog"); 
         exit;
     }
 }

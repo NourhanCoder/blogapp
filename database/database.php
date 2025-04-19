@@ -59,3 +59,15 @@ $table_sql_comment = "CREATE TABLE IF NOT EXISTS `comments` (
 if (!mysqli_query($con, $table_sql_comment)){
     return "Created Failed:" . mysqli_error($con);
 }
+
+$table_sql_comment = "CREATE TABLE IF NOT EXISTS `contact` (
+    `id` INT AUTO_INCREMENT PRIMARY KEY,
+    `name` VARCHAR(255),
+  `email` VARCHAR(255),
+    `phone` INT,
+    `message` TEXT
+)";
+
+if (!mysqli_query($con, $table_sql_comment)){
+    return "Created Failed:" . mysqli_error($con);
+}

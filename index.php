@@ -49,7 +49,10 @@ switch ($page) {
         break;
     case 'about':
         include "./view/about.php";
-        break;    
+        break;
+    case 'profile':
+        include "./view/blog/profile.php";
+        break;      
     default:
         echo "<h1> 404 - page not found </h1>"; //لو القيمه مش معروفه هيعرض رسالة الخطأ
 }

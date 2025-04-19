@@ -29,11 +29,11 @@ if (checkRequestMethod("POST") && checkPostInput('email')){
         exit;
     }
 
-    $sql= "SELECT * FROM users WHERE email = '$email'";
+    $sql= "SELECT * FROM users WHERE email = '$email'";  //يبحث عن المستخدم الذي يُطابق البريد الإلكتروني المدخل
 
     try{
         $res= mysqli_query($conn, $sql);
-        $user = mysqli_fetch_assoc($res);
+        $user = mysqli_fetch_assoc($res);   //جلب بيانات المستخدم
 
         if(password_verify($password, trim($user['password']))){
             $_SESSION['username'] = $user['name'];
